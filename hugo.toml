@@ -1,0 +1,4 @@
+baseURL = 'https://jjd-cyber.github.io'
+languageCode = 'en-us'
+title = 'My Website'
+theme = 'glim-midnight'
