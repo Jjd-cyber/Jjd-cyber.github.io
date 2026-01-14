@@ -17,3 +17,6 @@ theme = "glim-midnight"
     ] 
 
     footer = "A site in progress"
+
+[permalinks]
+  posts = '/posts/:filename/'
