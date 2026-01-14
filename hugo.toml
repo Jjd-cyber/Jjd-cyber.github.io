@@ -12,7 +12,6 @@ theme = "glim-midnight"
     links = [
         {name = "Github", url = "https://github.com/Jjd-cyber"},
         {name = "LinkedIn", url = "https://www.linkedin.com/in/joshua-d-3a4715333/"},
-	{name = "Resume", url = "https://nationalcyberleague.org/"}
         {name = "Projects", url = "/posts/"}
     ] 
 
