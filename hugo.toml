@@ -13,7 +13,7 @@ theme = "glim-midnight"
         {name = "Github", url = "https://github.com/Jjd-cyber", newTab = true},
         {name = "LinkedIn", url = "https://www.linkedin.com/in/joshua-d-3a4715333/", newTab = true},
 	{name = "Resume", url = "https://nationalcyberleague.org/", newTab = true},
-        {name = "Projects", url = "/posts/my-first-post/"}
+        {name = "Projects", url = "/posts/"}
     ] 
 
     footer = "A site in progress"
