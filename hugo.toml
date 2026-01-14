@@ -1,21 +1,21 @@
-baseURL = 'https://jjd-cyber.github.io/'
-languageCode = 'en-us'
-title = 'My Website'
-theme = 'glim-midnight'
+baseURL = "https://jjd-cyber.github.io/"
+languageCode = "en-us"
+title = "Jjd-cyber"
+theme = "glim-midnight"
 
 [params]
-  description = "Cybersecurity & Network Professional"
-  
-  # Social icons inside the "box"
-  [[params.social]]
-    name = "github"
-    url = "https://github.com/Jjd-cyber"
-  [[params.social]]
-    name = "linkedin"
-    url = "https://linkedin.com/in/yourprofile"
+    # This is the big text at the top
+    title = "Jjd-cyber"
+    
+    # These words will "animate" inside the box under your name
+    phrases = ["Cybersecurity", "Network Professional", "Linux Enthusiast"]
+    
+    # These are the buttons that will appear in the box
+    links = [
+        {name = "Github", url = "https://github.com/Jjd-cyber"},
+        {name = "LinkedIn", url = "https://linkedin.com/in/yourprofile"},
+        {name = "Projects", url = "/posts/"}
+    ] 
 
-[menu]
-  [[menu.main]]
-    name = "Projects"
-    url = "/projects/"
-    weight = 1
+    # If you want a footer
+    footer = "Made by Jjd-cyber"
