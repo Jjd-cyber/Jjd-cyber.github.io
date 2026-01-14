@@ -1,10 +1,12 @@
-baseURL = 'https://jjd-cyber.github.io'
+baseURL = 'https://jjd-cyber.github.io/'
 languageCode = 'en-us'
 title = 'My Website'
 theme = 'glim-midnight'
-description = "Cybersecurity & Netowrk Professional"
+
+[params]
+  description = "Cybersecurity & Network Professional"
   
- 
+  # Social icons inside the "box"
   [[params.social]]
     name = "github"
     url = "https://github.com/Jjd-cyber"
