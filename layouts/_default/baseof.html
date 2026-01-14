@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
     {{- partial "head.html" . -}}
-    <body style="margin: 0; padding: 0; background-color: #000; overflow-x: hidden;">
-        <div id="stars"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
-        
-        <div style="position: relative; z-index: 10;">
-            {{- block "main" . }}{{- end }}
-        </div>
+</head>
+<body style="margin: 0; background: black; color: white; font-family: sans-serif;">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
 
-        {{- partial "footer.html" . -}}
-    </body>
+    <div style="position: relative; z-index: 20;">
+        {{- block "main" . -}}{{- end -}}
+    </div>
+
+    {{- partial "footer.html" . -}}
+</body>
 </html>
