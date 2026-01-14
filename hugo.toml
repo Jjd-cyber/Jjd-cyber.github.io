@@ -10,7 +10,7 @@ theme = "glim-midnight"
     phrases = ["Cybersecurity Professional", "Network Professional", "Linux Enthusiast"]
     
     links = [
-        {name = "Github", url = "https://github.com/Jjd-cyber" newTab = true},
+        {name = "Github", url = "https://github.com/Jjd-cyber", newTab = true},
         {name = "LinkedIn", url = "https://www.linkedin.com/in/joshua-d-3a4715333/", newTab = true},
 	{name = "Resume", url = "https://nationalcyberleague.org/", newTab = true},
         {name = "Projects", url = "/posts/my-first-post/"}
