@@ -4,19 +4,16 @@ title = "Jjd-cyber"
 theme = "glim-midnight"
 
 [params]
-    # This is the big text at the top
     title = "Jjd-cyber"
     
     # These words will "animate" inside the box under your name
     phrases = ["Cybersecurity", "Network Professional", "Linux Enthusiast"]
     
-    # These are the buttons that will appear in the box
     links = [
         {name = "Github", url = "https://github.com/Jjd-cyber"},
         {name = "LinkedIn", url = "https://www.linkedin.com/in/joshua-d-3a4715333/"},
+	{name = "Resume", url = "https://nationalcyberleague.org/"}
         {name = "Projects", url = "/posts/"}
-	{name = "Resume", url = "/resume/"}
     ] 
 
-    # If you want a footer
-    footer = "Made by Jjd-cyber"
+    footer = "A site in progress"
