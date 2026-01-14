@@ -7,11 +7,12 @@ theme = "glim-midnight"
     title = "Jjd-cyber"
     
     # These words will "animate" inside the box under your name
-    phrases = ["Cybersecurity", "Network Professional", "Linux Enthusiast"]
+    phrases = ["Cybersecurity Professional", "Network Professional", "Linux Enthusiast"]
     
     links = [
         {name = "Github", url = "https://github.com/Jjd-cyber"},
         {name = "LinkedIn", url = "https://www.linkedin.com/in/joshua-d-3a4715333/"},
+	{name = "Resume", url = "https://nationalcyberleague.org/"},
         {name = "Projects", url = "/posts/"}
     ] 
 
