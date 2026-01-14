@@ -13,8 +13,9 @@ theme = "glim-midnight"
     # These are the buttons that will appear in the box
     links = [
         {name = "Github", url = "https://github.com/Jjd-cyber"},
-        {name = "LinkedIn", url = "https://linkedin.com/in/yourprofile"},
+        {name = "LinkedIn", url = "https://www.linkedin.com/in/joshua-d-3a4715333/"},
         {name = "Projects", url = "/posts/"}
+	{name = "Resume", url = "/resume/"}
     ] 
 
     # If you want a footer
