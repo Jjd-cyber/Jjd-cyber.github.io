@@ -3,11 +3,14 @@ languageCode = "en-us"
 title = "Jjd-cyber"
 theme = "glim-midnight"
 
+[permalinks]
+  posts = '/posts/:contentbasename/'
+
 [params]
-    title = "Jjd-cyber"
+    title = "Joshua Diedhiou"
     
     # These words will "animate" inside the box under your name
-    phrases = ["Cybersecurity Professional", "Network Professional", "Linux Enthusiast"]
+    phrases = ["Cybersecurity Professional", "Network Professional", "Kali Linux Enthusiast"]
     
     links = [
         {name = "Github", url = "https://github.com/Jjd-cyber", newTab = true},
@@ -17,6 +20,3 @@ theme = "glim-midnight"
     ] 
 
     footer = "A site in progress"
-
-[permalinks]
-  posts = '/posts/:contentbasename/'
