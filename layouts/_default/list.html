@@ -1,17 +1,25 @@
 {{ define "main" }}
-<div style="max-width: 800px; margin: 50px auto; padding: 20px; color: white; font-family: sans-serif;">
-    <h1>{{ .Title }}</h1>
-    <hr>
-    <ul>
-        {{ range .Pages }}
-        <li style="margin-bottom: 20px; list-style: none;">
-            <a href="{{ .Permalink }}" style="color: #00d4ff; font-size: 1.5rem; text-decoration: none;">
-                {{ .Title }}
-            </a>
-            <p style="color: #ccc;">{{ .Date.Format "January 2, 2006" }}</p>
-        </li>
-        {{ end }}
-    </ul>
-    <a href="/" style="color: #aaa;">← Back to Home</a>
+<div style="padding: 40px; color: white; font-family: sans-serif; min-height: 80px; display: flex; flex-direction: column; justify-content: space-between; min-height: 90vh;">
+    
+    <div style="text-align: left;">
+        <h1 style="font-size: 1.5rem; margin-bottom: 5px;">{{ .Title }}</h1>
+        <hr style="border: 0.5px solid #333; margin-bottom: 20px;">
+        
+        <ul style="padding: 0;">
+            {{ range .Pages }}
+            <li style="margin-bottom: 15px; list-style: none;">
+                <a href="{{ .Permalink }}" style="color: #00d4ff; font-size: 1.1rem; text-decoration: none; font-weight: bold;">
+                    {{ .Title }}
+                </a>
+                <p style="color: #888; font-size: 0.9rem; margin: 2px 0;">{{ .Date.Format "Jan 2, 2006" }}</p>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+
+    <div style="text-align: left; margin-top: auto; padding-bottom: 20px;">
+        <a href="/" style="color: #666; font-size: 0.9rem; text-decoration: none;">← Back to Home</a>
+    </div>
+
 </div>
 {{ end }}
