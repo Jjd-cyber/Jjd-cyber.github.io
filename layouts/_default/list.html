@@ -1,7 +1,7 @@
 {{ define "main" }}
-<div style="display: flex; flex-direction: column; min-height: 100vh; padding: 40px; color: white; font-family: sans-serif; box-sizing: border-box;">
+<div style="display: flex; flex-direction: column; min-height: 100vh; padding: 40px; color: white; font-family: monospace;">
     
-    <div style="flex: 1;">
+    <div style="flex-grow: 1;">
         <h1 style="font-size: 1.5rem; margin-bottom: 5px;">{{ .Title }}</h1>
         <hr style="border: 0.5px solid #333; margin-bottom: 20px;">
         
@@ -21,7 +21,7 @@
         </div>
     </div>
 
-    <div style="margin-top: auto; padding-top: 40px; border-top: 1px solid #333;">
+    <div style="padding-top: 40px;">
         {{ partial "footer.html" . }}
     </div>
 </div>
