@@ -4,7 +4,7 @@
             {{ if .Site.Params.backgroundImage }}
                 <img src="{{ .Site.Params.backgroundImage | relURL }}" alt="Background" class="background-image">
             {{ else }}
-                <video autoplay muted loop>
+                <video autoplay muted loop style="z-index: 1;">
                     {{ if .Site.Params.backgroundVideo }}
                         <source src="{{ .Site.Params.backgroundVideo | relURL }}" type="video/mp4">
                     {{ else }}
@@ -13,7 +13,7 @@
                 </video>
             {{ end }}
             
-            <div class='content'>
+            <div class='content' style="z-index: 10; position: relative;">
                 <div>
                     <div class='contenthead'>
                         <h3 class='contentheading'>{{ .Site.Params.title }}</h3>
@@ -30,8 +30,8 @@
                     </div>
 
                     {{ if .Site.Params.footer }}
-                    <div style="margin-top: 2.5rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
-                        <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem; letter-spacing: 1px; font-family: monospace;">
+                    <div style="margin-top: 2rem; position: relative; z-index: 20;">
+                        <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; font-family: monospace; text-shadow: 1px 1px 2px black;">
                             {{ .Site.Params.footer }}
                         </p>
                     </div>

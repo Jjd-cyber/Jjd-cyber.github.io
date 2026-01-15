@@ -8,7 +8,7 @@ theme = "glim-midnight"
 
 [params]
     title = "Joshua Diedhiou"
-    
+    footer = "A site in progress"
     # These words will "animate" inside the box under your name
     phrases = ["Cybersecurity Professional", "Network Professional", "Kali Linux Enthusiast"]
     
@@ -18,4 +18,3 @@ theme = "glim-midnight"
 	{name = "Resume", url = "/resume.pdf", newTab = true},
         {name = "Projects", url = "/posts/"}
     ] 
-
