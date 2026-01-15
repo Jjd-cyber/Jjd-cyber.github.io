@@ -1,13 +1,13 @@
 {{ define "main" }}
-<div style="display: flex; flex-direction: column; min-height: 100vh; padding: 40px; color: white; font-family: monospace;">
+<div class='mainbg' style="display: flex; flex-direction: column; min-height: 100vh;">
     
-    <div style="flex-grow: 1;">
-        <h1 style="font-size: 1.5rem; margin-bottom: 5px;">{{ .Title }}</h1>
+    <div class='content' style="flex: 1; padding: 40px;">
+        <h1 class='contentheading' style="font-size: 1.5rem;">{{ .Title }}</h1>
         <hr style="border: 0.5px solid #333; margin-bottom: 20px;">
         
-        <ul style="padding: 0;">
+        <ul style="padding: 0; list-style: none;">
             {{ range .Pages }}
-            <li style="margin-bottom: 15px; list-style: none;">
+            <li style="margin-bottom: 15px;">
                 <a href="{{ .Permalink }}" style="color: #00d4ff; font-size: 1.1rem; text-decoration: none; font-weight: bold;">
                     {{ .Title }}
                 </a>
@@ -17,12 +17,10 @@
         </ul>
 
         <div style="margin-top: 50px;">
-            <a href="/" style="color: #666; font-size: 0.9rem; text-decoration: none;">← Back to Home</a>
+            <a href="/" style="text-decoration: none; color: #ffffff;">← Back to Home</a>
         </div>
     </div>
 
-    <div style="padding-top: 40px;">
-        {{ partial "footer.html" . }}
-    </div>
+    {{ partial "footer.html" . }}
 </div>
 {{ end }}

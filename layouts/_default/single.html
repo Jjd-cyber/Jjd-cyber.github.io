@@ -1,17 +1,17 @@
 {{ define "main" }}
-<div style="padding: 50px; text-align: left; color: white; font-family: monospace;">
-    <h1 style="color: #00d4ff;">{{ .Title }}</h1>
-    <p style="color: #888;">{{ .Date.Format "January 2, 2006" }}</p>
-    <hr style="border: 0.5px solid #333;">
+<div class='mainbg' style="display: flex; flex-direction: column; min-height: 100vh;">
     
-    <div style="line-height: 1.6; font-size: 1.1rem; margin-top: 20px;">
-        {{ .Content }}
+    <div class='content' style="flex: 1; padding: 40px;">
+        <h1 class='contentheading'>{{ .Title }}</h1>
+        <div class="post-content" style="line-height: 1.6; color: #ffffff;">
+            {{ .Content }}
+        </div>
+        
+        <div style="margin-top: 50px;">
+            <a href="/posts/" style="text-decoration: none; color: #ffffff;">← Back to Projects</a>
+        </div>
     </div>
-    
-    <br>
-    <a href="/posts/" style="color: #666; text-decoration: none;">← Back to Projects</a>
+
+    {{ partial "footer.html" . }}
 </div>
-    <div style="margin-top: 50px; border-top: 1px solid #333;">
-        {{ partial "footer.html" . }}
-    </div>
 {{ end }}
