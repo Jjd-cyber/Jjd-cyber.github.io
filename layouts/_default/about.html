@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class='mainbg' style="display: flex; flex-direction: column; min-height: 100vh;">
+    
+    <div class='content' style="flex: 1; padding: 40px; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+        
+        <h1 class='contentheading' style="font-size: 2rem; margin-bottom: 20px;">{{ .Title }}</h1>
+        
+        <div class="post-content" style="line-height: 1.6; color: #ffffff; max-width: 800px; margin: 0 auto;">
+            {{ .Content }}
+        </div>
+        
+        <div style="margin-top: 50px;">
+            <a href="/" style="text-decoration: none; color: #ffffff; font-family: monospace;">← Back to Home</a>
+        </div>
+    </div>
+
+    {{ partial "footer.html" . }}
+</div>
+{{ end }}
