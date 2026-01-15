@@ -13,6 +13,7 @@ theme = "glim-midnight"
     phrases = ["Cybersecurity Professional", "Network Professional", "Kali Linux Enthusiast"]
     
     links = [
+	{name = "About Me", url = "https://nationalcyberleague.org/"
         {name = "Github", url = "https://github.com/Jjd-cyber", newTab = true},
         {name = "LinkedIn", url = "https://www.linkedin.com/in/joshua-d-3a4715333/", newTab = true},
 	{name = "Resume", url = "/resume.pdf", newTab = true},
