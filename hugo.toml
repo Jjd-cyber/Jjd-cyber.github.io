@@ -17,5 +17,5 @@ theme = "glim-midnight"
         {name = "Github", url = "https://github.com/Jjd-cyber", newTab = true},
         {name = "LinkedIn", url = "https://www.linkedin.com/in/joshua-d-3a4715333/", newTab = true},
 	{name = "Resume", url = "/resume.pdf", newTab = true},
-        {name = "Projects", url = "/posts/"}
+        {name = "Posts", url = "/posts/"}
     ] 
