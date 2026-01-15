@@ -1,9 +1,9 @@
 {{ if .Site.Params.footer }}
-<footer class="site-footer" style="text-align: center; padding: 30px 0; width: 100%;">
+<footer class="site-footer" style="text-align: center; padding: 10px 0; width: 100%; position: relative; z-index: 10; pointer-events: none;">
     
     <img src="{{ "/imagelogo.png" | relURL }}" class="top-right-logo" alt="Logo">
 
-    <p style="margin: 0; color: #ffffff; font-family: monospace; font-size: 1rem;">
+    <p style="margin: 0; color: #ffffff; font-family: monospace; font-size: 1rem; pointer-events: auto;">
         {{ .Site.Params.footer }}
     </p>
 
@@ -15,14 +15,14 @@
             width: 120px;
             height: auto;
             z-index: 1000;
-            pointer-events: none;
+            /* Logo is already set to none so it doesn't block clicks */
+            pointer-events: none; 
         }
 
-        /* If the screen is smaller than 600px (Mobile) */
         @media (max-width: 600px) {
             .top-right-logo {
-                width: 70px; /* Make it smaller */
-                top: 10px;   /* Move it closer to the corner */
+                width: 70px;
+                top: 10px;
                 right: 10px;
             }
         }
