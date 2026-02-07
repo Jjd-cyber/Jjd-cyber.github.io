@@ -16,9 +16,10 @@
                 </div>
                 <div class='contenttypewritter animatedText'></div>
                 
-                <div class='contentbtn' style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 10px;">
+                <div class='contentbtn' style="text-align: center; width: 100%;">
                     {{ range .Site.Params.links }}
                         <a href="{{ .url }}" class='btn btn-outline-light' role='button' 
+                           style="display: inline-block !important; width: auto !important; margin: 5px 10px !important;"
                            {{ if .newTab }} target="_blank" {{ end }}>
                            {{ .name }}
                         </a>
@@ -34,12 +35,6 @@
 </div>
 
 <style>
-    /* Force buttons to stay side-by-side */
-    .contentbtn {
-        display: flex !important;
-        flex-direction: row !important;
-    }
-
     @media (max-width: 768px) {
         .bg-video {
             display: none !important;
