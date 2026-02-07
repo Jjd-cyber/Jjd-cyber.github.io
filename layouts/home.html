@@ -9,14 +9,14 @@
             </video>
         {{ end }}
 
-        <div class='content'>
+        <div class='content' style="position: absolute; top: 10%; width: 100%; text-align: center;">
             <div>
                 <div class='contenthead'>
                     <h3 class='contentheading'>{{ .Site.Params.title }}</h3>
                 </div>
                 <div class='contenttypewritter animatedText'></div>
                 
-                <div class='contentbtn'>
+                <div class='contentbtn' style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 10px;">
                     {{ range .Site.Params.links }}
                         <a href="{{ .url }}" class='btn btn-outline-light' role='button' 
                            {{ if .newTab }} target="_blank" {{ end }}>
@@ -34,12 +34,18 @@
 </div>
 
 <style>
+    /* Force buttons to stay side-by-side */
+    .contentbtn {
+        display: flex !important;
+        flex-direction: row !important;
+    }
+
     @media (max-width: 768px) {
         .bg-video {
             display: none !important;
         }
         .mainbg {
-            background-color: #000; 
+            background-color: #000;
         }
     }
 </style>
