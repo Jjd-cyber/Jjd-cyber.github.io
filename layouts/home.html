@@ -16,10 +16,9 @@
                 </div>
                 <div class='contenttypewritter animatedText'></div>
                 
-                <div style="display: grid !important; grid-auto-flow: column; justify-content: center; gap: 15px; margin-top: 30px; padding: 0 20px;">
+                <div class='contentbtn' style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 10px;">
                     {{ range .Site.Params.links }}
                         <a href="{{ .url }}" class='btn btn-outline-light' role='button' 
-                           style="width: 160px !important; margin: 0 !important; display: flex !important; align-items: center; justify-content: center; height: 45px;"
                            {{ if .newTab }} target="_blank" {{ end }}>
                            {{ .name }}
                         </a>
@@ -35,11 +34,13 @@
 </div>
 
 <style>
-    /* Mobile adjustments: Stack them only when the screen gets too thin */
-    @media (max-width: 850px) {
-        div[style*="grid-auto-flow: column"] {
-            grid-auto-flow: row !important;
-        }
+    /* Force buttons to stay side-by-side */
+    .contentbtn {
+        display: flex !important;
+        flex-direction: row !important;
+    }
+
+    @media (max-width: 768px) {
         .bg-video {
             display: none !important;
         }
