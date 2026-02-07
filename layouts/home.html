@@ -43,4 +43,21 @@
     }
 
     @media (max-width: 850px) {
-        div[style
+        div[style*="grid-auto-flow: column"] {
+            grid-auto-flow: row !important;
+            gap: 15px !important;
+        }
+        .bg-video {
+            display: none !important;
+        }
+        .mainbg {
+            background-color: #000;
+        }
+    }
+</style>
+
+<script>
+    const textArray = {{ .Site.Params.phrases | jsonify | safeJS }};
+</script>
+<script src='{{ "js/script.js" | relURL }}'></script>
+{{ end }}
