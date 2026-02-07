@@ -4,7 +4,7 @@
         {{ if .Site.Params.backgroundImage }}
             <img src="{{ .Site.Params.backgroundImage | relURL }}" alt="Background" class="background-image">
         {{ else }}
-            <video autoplay muted loop style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -2; object-fit: cover;">
+            <video autoplay muted loop class="bg-video" style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -2; object-fit: cover;">
                 <source src="{{ "bg.mp4" | relURL }}" type="video/mp4">
             </video>
         {{ end }}
@@ -33,6 +33,16 @@
     </div>
 </div>
 
+<style>
+    @media (max-width: 768px) {
+        .bg-video {
+            display: none !important;
+        }
+        .mainbg {
+            background-color: #000; /* Keeps the background black when video is hidden */
+        }
+    }
+</style>
 <script>
     const textArray = {{ .Site.Params.phrases | jsonify | safeJS }};
 </script>
