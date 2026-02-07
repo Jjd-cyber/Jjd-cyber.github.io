@@ -11,20 +11,21 @@
 
         <div class='content' style="position: absolute; top: 10%; width: 100%; text-align: center;">
             <div>
-                <div class='contenthead'>
-                    <h3 class='contentheading' style="color: #ffffff !important;">{{ .Site.Params.title }}</h3>
-                </div>
-                <div class='contenttypewritter animatedText' style="color: #ffffff !important;"></div>
-                
-                <div style="display: grid !important; grid-auto-flow: column; justify-content: center; gap: 20px; margin-top: 25px; padding: 0 10px;">
+                <div style="display: grid !important; grid-auto-flow: column; justify-content: center; gap: 20px; margin-bottom: 30px; padding: 0 10px;">
                     {{ range .Site.Params.links }}
                         <a href="{{ .url }}" class='btn' role='button' 
-                           style="width: 140px !important; height: 40px !important; padding: 0 !important; display: flex !important; align-items: center; justify-content: center; font-size: 1rem !important; border-radius: 4px !important; margin: 0 !important; border: 1.5px solid #ffffff !important; color: #ffffff !important; font-weight: 500; background: transparent;"
+                           style="width: 140px !important; height: 40px !important; padding: 0 !important; display: flex !important; align-items: center; justify-content: center; font-size: 1rem !important; border-radius: 4px !important; margin: 0 !important; border: 2px solid #ffffff !important; color: #ffffff !important; font-weight: 600; background: transparent;"
                            {{ if .newTab }} target="_blank" {{ end }}>
                            {{ .name }}
                         </a>
                     {{ end }}
                 </div>
+
+                <div class='contenthead'>
+                    <h3 class='contentheading' style="color: #ffffff !important; margin: 0; opacity: 1 !important;">{{ .Site.Params.title }}</h3>
+                </div>
+
+                <div class='contenttypewritter animatedText' style="color: #ffffff !important; opacity: 1 !important; margin-top: 10px;"></div>
             </div>
         </div>
 
@@ -35,16 +36,11 @@
 </div>
 
 <style>
-    /* Ensure all text in the heading area is bright white */
-    .contentheading, .animatedText {
-        color: #ffffff !important;
-        opacity: 1 !important;
-    }
-
+    /* Hiding video on mobile and keeping layout consistent */
     @media (max-width: 850px) {
         div[style*="grid-auto-flow: column"] {
             grid-auto-flow: row !important;
-            gap: 15px !important;
+            gap: 12px !important;
         }
         .bg-video {
             display: none !important;
