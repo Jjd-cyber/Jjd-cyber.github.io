@@ -113,7 +113,6 @@
 </div>
 
 <style>
-    /* Desktop Styles */
     .myText ul li { margin-bottom: 8px; }
     #sidebar-open { display: none; }
     .desktop-links { position: absolute; top: 50px; left: 0; width: 100%; display: grid !important; grid-auto-flow: column !important; justify-content: center !important; gap: 30px !important; }
@@ -132,18 +131,8 @@
     .sidebar { height: 100%; width: 0; position: fixed; z-index: 10000; top: 0; right: 0; background: rgba(0,0,0,0.95); transition: 0.5s; padding-top: 60px; border-left: 1px solid #333; overflow-x: hidden; }
     .sidebar-links a { padding: 15px 32px; text-decoration: none; font-size: 1.2rem; color: #ffffff; display: block; font-family: monospace; }
 
-    /* Mobile Styles */
     @media (max-width: 850px) {
         .bg-video { display: none !important; }
-        .mainbg {
-            background-image: url('{{ "bg.jpg" | relURL }}');
-            background-repeat: repeat-y; /* Tiles down if content is very long */
-            background-position: center top;
-            background-size: 100% auto; /* Stretches to width, height follows content */
-            background-attachment: scroll; 
-            min-height: 100vh;
-            width: 100%;
-        }
         .desktop-links { display: none !important; }
         #sidebar-open { display: block; position: fixed; top: 20px; right: 20px; font-size: 30px; color: #ffffff; z-index: 9998; cursor: pointer; }
         .hero-section { min-height: auto; padding-top: 90px; padding-bottom: 5px; }
