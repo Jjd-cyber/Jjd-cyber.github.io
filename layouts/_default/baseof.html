@@ -9,6 +9,12 @@
     <div id="stars2"></div>
     <div id="stars3"></div>
 
+    <a href="/" style="display: block;">
+        <img src="{{ "/imagelogo.png" | relURL }}" alt="Logo" 
+             style="position: fixed; top: 20px; z-index: 9999; width: 120px; height: auto; 
+             {{ if eq .Section "posts" }} right: 20px; {{ else }} left: 20px; {{ end }}">
+    </a>
+
     <div style="position: relative; z-index: 20;">
         {{- block "main" . -}}{{- end -}}
     </div>
