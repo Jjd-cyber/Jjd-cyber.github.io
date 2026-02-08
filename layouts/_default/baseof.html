@@ -4,41 +4,38 @@
     {{- partial "head.html" . -}}
     <link rel="icon" type="image/png" href="{{ "/favicon.png" | relURL }}?v=1">
     <style>
-        /* Desktop Default: Fixed 120px logo */
+        /* Base Logo Styles */
         .master-logo {
-            position: fixed !important;
+            position: absolute !important; /* Locks it to the top of the page, NOT the screen */
             top: 20px !important;
             z-index: 9999 !important;
-            width: 120px;
+            width: 120px; /* Desktop default */
             height: auto;
             pointer-events: auto;
-            transition: width 0.3s ease;
         }
 
-        /* Mobile Only: Percentage scaling and tighter top lock */
+        /* Mobile Only Adjustments */
         @media (max-width: 850px) {
             .master-logo {
-                width: 15% !important;
-                min-width: 65px !important;
-                top: 10px !important;
+                width: 30% !important; /* Raised to 30% as requested */
+                top: 15px !important;
             }
 
-            /* This pushes the content down on ALL pages (About, Posts, etc) 
-               specifically on mobile so the logo doesn't overlap text */
+            /* Adjusts the content start point to prevent overlap without huge gaps */
             .main-content-wrapper {
-                padding-top: 100px !important;
+                margin-top: 60px !important; 
             }
         }
     </style>
 </head>
-<body style="margin: 0; background: black; color: white; font-family: monospace;">
+<body style="margin: 0; background: black; color: white; font-family: monospace; position: relative;">
     <div id="stars"></div>
     <div id="stars2"></div>
     <div id="stars3"></div>
 
-    <a href="{{ "/" | absURL }}" style="display: block; position: relative; z-index: 9999;">
+    <a href="{{ "/" | absURL }}" style="display: block;">
         <img src="{{ "/imagelogo.png" | absURL }}" alt="Logo" class="master-logo"
-             style="{{ if eq .Section "posts" }} right: 20px !important; left: auto !important; {{ else }} left: 20px !important; right: auto !important; {{ end }}">
+             style="{{ if eq .Section "posts" }} right: 20px !important; {{ else }} left: 20px !important; {{ end }}">
     </a>
 
     <div class="main-content-wrapper" style="position: relative; z-index: 20;">
