@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <div class='content'>
+    <div class='hero-section' style="height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center;">
         <div>
             <div class="desktop-links">
                 {{ range .Site.Params.links }}
@@ -36,21 +36,39 @@
         </div>
     </div>
 
-    <div class="footer-wrap">
+    <div class="info-grid" style="max-width: 1200px; margin: 0 auto; padding: 50px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; position: relative; z-index: 30;">
+        
+        <div class="grid-box" style="background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 20px; border-radius: 8px;">
+            <img src="/path-to-your-image1.jpg" style="width: 100%; border-radius: 4px; margin-bottom: 15px;">
+            <h4 style="color: #00d4ff;">Project One</h4>
+            <p>Write a brief description about your first project or focus area here.</p>
+        </div>
+
+        <div class="grid-box" style="background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 20px; border-radius: 8px;">
+            <img src="/path-to-your-image2.jpg" style="width: 100%; border-radius: 4px; margin-bottom: 15px;">
+            <h4 style="color: #00d4ff;">Project Two</h4>
+            <p>Details about your second project, lab, or certification can go in this box.</p>
+        </div>
+
+        <div class="grid-box" style="background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 20px; border-radius: 8px;">
+            <img src="/path-to-your-image3.jpg" style="width: 100%; border-radius: 4px; margin-bottom: 15px;">
+            <h4 style="color: #00d4ff;">Project Three</h4>
+            <p>Highlight another key area of your professional work or cybersecurity interest.</p>
+        </div>
+    </div>
+
+    <div class="footer-wrap" style="padding: 40px 0;">
         {{ partial "footer.html" . }}
     </div>
 </div>
 
 <style>
-    /* DESKTOP (Locked as requested) */
-    .content { position: fixed; top: 0; left: 0; width: 100%; text-align: center; padding-top: 75px; z-index: 10; }
-    
+    /* DESKTOP: Navigation boxes stay on screen */
     .desktop-links { 
-        display: grid !important; 
-        grid-auto-flow: column !important; 
-        justify-content: center !important; 
-        gap: 30px !important; 
-        margin-bottom: 35px !important; 
+        position: fixed; top: 75px; left: 0; width: 100%;
+        display: grid !important; grid-auto-flow: column !important; 
+        justify-content: center !important; gap: 30px !important; 
+        z-index: 100;
     }
 
     .btn { 
@@ -58,30 +76,25 @@
         align-items: center; justify-content: center; font-size: 1rem !important; 
         border-radius: 4px; border: 2px solid #ffffff; color: #ffffff; 
         font-weight: 600; text-shadow: 0 0 5px rgba(255,255,255,0.7); 
-        box-shadow: 0 0 5px rgba(255,255,255,0.5); text-transform: none !important; 
+        box-shadow: 0 0 5px rgba(255,255,255,0.5); text-transform: none !important;
+        background: rgba(0,0,0,0.5); /* Slight background to keep links readable over grid */
     }
     
     .contentheading, .animatedText { color: #ffffff; text-shadow: 0 0 5px rgba(255,255,255,0.7); text-transform: none !important; }
     .bg-video { position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -2; object-fit: cover; }
-    .footer-wrap { position: fixed; bottom: 20px; width: 100%; z-index: 999; pointer-events: none; }
     
-    .sidebar {
-        height: 100%; width: 0; position: fixed; z-index: 10000; top: 0; right: 0;
-        background-color: rgba(0, 0, 0, 0.95); overflow-x: hidden; transition: 0.5s; padding-top: 60px;
-        border-left: 1px solid #333;
-    }
+    /* Sidebar */
+    .sidebar { height: 100%; width: 0; position: fixed; z-index: 10000; top: 0; right: 0; background: rgba(0,0,0,0.95); transition: 0.5s; padding-top: 60px; border-left: 1px solid #333; }
     .sidebar-links a { padding: 15px 32px; text-decoration: none; font-size: 1.2rem; color: white; display: block; font-family: monospace; }
     #sidebar-open { display: none; position: fixed; top: 20px; right: 20px; font-size: 30px; color: white; cursor: pointer; z-index: 9998; }
     #sidebar-close { position: absolute; top: 10px; left: 20px; font-size: 36px; color: white; cursor: pointer; }
 
-    /* MOBILE ONLY CHANGES */
     @media (max-width: 850px) {
         .desktop-links { display: none !important; }
         #sidebar-open { display: block; }
         .bg-video { display: none; }
-        .mainbg { background-color: #000; }
-        /* Only change padding-top on mobile */
-        .content { padding-top: 120px !important; }
+        .hero-section { height: auto; padding-top: 120px; padding-bottom: 40px; }
+        .info-grid { grid-template-columns: 1fr; }
     }
 </style>
 
