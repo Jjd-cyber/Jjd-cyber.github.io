@@ -8,7 +8,7 @@
         </video>
     {{ end }}
 
-    <div class='content' style="position: fixed; top: 0; left: 0; width: 100%; text-align: center; padding-top: 20px; z-index: 10;">
+    <div class='content' style="position: fixed; top: 0; left: 0; width: 100%; text-align: center; padding-top: 75px; z-index: 10;">
         <div>
             <div style="display: grid !important; grid-auto-flow: column; justify-content: center; gap: 30px; margin-bottom: 35px; padding: 0 10px;">
                 {{ range .Site.Params.links }}
@@ -24,10 +24,10 @@
             </div>
 
             <div class='contenthead'>
-                <h3 class='contentheading' style="color: #ffffff !important; margin: 0; opacity: 1 !important; text-shadow: 0 0 5px rgba(255,255,255,0.7);">{{ .Site.Params.title }}</h3>
+                <h3 class='contentheading' style="color: #ffffff !important; margin: 0; opacity: 1 !important; text-shadow: 0 0 5px rgba(255,255,255,0.7); text-transform: none !important;">{{ .Site.Params.title }}</h3>
             </div>
 
-            <div class='contenttypewritter animatedText' style="color: #ffffff !important; opacity: 1 !important; margin-top: 10px; text-shadow: 0 0 5px rgba(255,255,255,0.7);"></div>
+            <div class='contenttypewritter animatedText' style="color: #ffffff !important; opacity: 1 !important; margin-top: 10px; text-shadow: 0 0 5px rgba(255,255,255,0.7); text-transform: none !important;"></div>
         </div>
     </div>
 
@@ -38,10 +38,18 @@
 
 <style>
     .mainbg { display: block !important; }
+    /* Ensuring theme doesn't override the casing */
+    .contentheading, .btn, .animatedText { text-transform: none !important; }
+    
     @media (max-width: 850px) {
-        div[style*="grid-auto-flow: column"] { grid-auto-flow: row !important; gap: 15px !important; }
+        div[style*="grid-auto-flow: column"] { 
+            grid-auto-flow: row !important; 
+            gap: 15px !important; 
+        }
         .bg-video { display: none !important; }
         .mainbg { background-color: #000; }
+        /* Reset padding for mobile if needed */
+        .content { padding-top: 40px !important; }
     }
 </style>
 
