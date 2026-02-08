@@ -53,9 +53,21 @@
         <div style="background: rgba(0, 0, 0, 0.7); border: 1px solid #333; display: flex; flex-wrap: wrap; gap: 40px; padding: 40px; border-radius: 12px; align-items: center;">
             
             <div style="flex: 1.2; min-width: 300px;">
-                <p style="line-height: 1.8; color: #ffffff; font-family: monospace; font-size: 0.95rem;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula.
-                </p>
+                <div class="myText" style="display: block;">
+                    <p style="line-height: 1.8; color: #ffffff; font-family: monospace; font-size: 0.95rem;">
+                        <strong>Slide 3 Text:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. (100 words here...)
+                    </p>
+                </div>
+                <div class="myText" style="display: none;">
+                    <p style="line-height: 1.8; color: #ffffff; font-family: monospace; font-size: 0.95rem;">
+                        <strong>Slide 1 Text:</strong> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
+                    </p>
+                </div>
+                <div class="myText" style="display: none;">
+                    <p style="line-height: 1.8; color: #ffffff; font-family: monospace; font-size: 0.95rem;">
+                        <strong>Slide 2 Text:</strong> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.
+                    </p>
+                </div>
             </div>
 
             <div style="flex: 1.8; min-width: 320px; position: relative; height: 450px; border-radius: 8px; border: 2px solid #00d4ff; box-shadow: 0 0 15px rgba(0, 212, 255, 0.4); overflow: hidden;">
@@ -75,22 +87,18 @@
 </div>
 
 <style>
-    /* Desktop Nav Styles */
     .desktop-links { position: absolute; top: 75px; left: 0; width: 100%; display: grid !important; grid-auto-flow: column !important; justify-content: center !important; gap: 30px !important; }
     
+    /* Box keeps white glow, text turns blue on hover */
     .btn { 
         width: 145px; height: 40px; display: flex; align-items: center; justify-content: center; 
         border: 2px solid #ffffff; border-radius: 4px; background: rgba(0,0,0,0.4); 
         box-shadow: 0 0 10px rgba(255,255,255,0.6); transition: 0.3s; text-decoration: none;
     }
-    
     .btn-text { color: #ffffff; font-weight: 600; transition: 0.3s; }
-
-    /* Only the text turns blue on hover, box stays glowing white */
     .btn:hover .btn-text { color: #00d4ff !important; }
     .btn:hover { background: rgba(255,255,255,0.1); }
 
-    /* Slideshow Arrows */
     .ss-btn {
         position: absolute; top: 50%; transform: translateY(-50%); 
         background: rgba(0,0,0,0.7); color: #00d4ff; border: 1px solid #00d4ff; 
@@ -119,10 +127,17 @@
     function showSlides(n) {
         let i;
         let slides = document.getElementsByClassName("mySlides");
+        let texts = document.getElementsByClassName("myText");
+        
         if (n > slides.length) {slideIndex = 1}
         if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+        
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+            texts[i].style.display = "none";
+        }
         slides[slideIndex-1].style.display = "block";
+        texts[slideIndex-1].style.display = "block";
     }
 
     function toggleSidebar() {
