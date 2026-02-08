@@ -4,9 +4,11 @@
     {{- partial "head.html" . -}}
     <link rel="icon" type="image/png" href="{{ "/favicon.png" | relURL }}?v=1">
     <style>
-        /* Desktop Default */
+        /* Base Logo Styles */
         .master-logo {
-            position: absolute !important;
+            /* If it's the home page, lock it to the screen (fixed). 
+               Otherwise, lock it to the top of the page (absolute). */
+            position: {{ if .IsHome }}fixed{{ else }}absolute{{ end }} !important;
             top: 20px !important;
             z-index: 9999 !important;
             width: 120px;
@@ -17,11 +19,11 @@
         /* Mobile Adjustments */
         @media (max-width: 850px) {
             .master-logo {
-                width: 20% !important; /* Scaled to 20% */
-                top: 15px !important; /* Aligned vertically with the hamburger */
+                width: 20% !important;
+                top: 15px !important;
             }
 
-            /* Removes the "huge patch" of empty space */
+            /* Minimal space to prevent overlap without huge gaps */
             .main-content-wrapper {
                 margin-top: 20px !important; 
                 padding-top: 0 !important;
