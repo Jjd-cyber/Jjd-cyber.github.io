@@ -4,26 +4,27 @@
     {{- partial "head.html" . -}}
     <link rel="icon" type="image/png" href="{{ "/favicon.png" | relURL }}?v=1">
     <style>
-        /* Base Logo Styles */
+        /* Desktop Default */
         .master-logo {
-            position: absolute !important; /* Locks it to the top of the page, NOT the screen */
+            position: absolute !important;
             top: 20px !important;
             z-index: 9999 !important;
-            width: 120px; /* Desktop default */
+            width: 120px;
             height: auto;
             pointer-events: auto;
         }
 
-        /* Mobile Only Adjustments */
+        /* Mobile Adjustments */
         @media (max-width: 850px) {
             .master-logo {
-                width: 30% !important; /* Raised to 30% as requested */
-                top: 15px !important;
+                width: 20% !important; /* Scaled to 20% */
+                top: 15px !important; /* Aligned vertically with the hamburger */
             }
 
-            /* Adjusts the content start point to prevent overlap without huge gaps */
+            /* Removes the "huge patch" of empty space */
             .main-content-wrapper {
-                margin-top: 60px !important; 
+                margin-top: 20px !important; 
+                padding-top: 0 !important;
             }
         }
     </style>
