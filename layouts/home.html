@@ -133,6 +133,11 @@
 
     @media (max-width: 850px) {
         .bg-video { display: none !important; }
+        .mainbg {
+            background: url('{{ "bg.jpg" | relURL }}') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+        }
         .desktop-links { display: none !important; }
         #sidebar-open { display: block; position: fixed; top: 20px; right: 20px; font-size: 30px; color: #ffffff; z-index: 9998; cursor: pointer; }
         .hero-section { min-height: auto; padding-top: 90px; padding-bottom: 5px; }
