@@ -41,4 +41,56 @@
             
             <div style="flex: 1; min-width: 280px;">
                 <img src="/homeimages/aboutme.jpeg" alt="About Me" 
-                     style="width: 100%; border-radius: 8px; border: 2px
+                     style="width: 100%; border-radius: 8px; border: 2px solid #00d4ff; box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);">
+            </div>
+
+            <div style="flex: 2; min-width: 300px;">
+                <h2 style="color: #00d4ff; margin-top: 0; font-family: monospace; text-transform: none;">About Me</h2>
+                <p style="line-height: 1.8; color: #ffffff; font-family: monospace; font-size: 0.95rem;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed vestibulum diam lacus eget erat.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-wrap" style="padding: 40px 0;">
+        {{ partial "footer.html" . }}
+    </div>
+</div>
+
+<style>
+    /* DESKTOP NAV */
+    .desktop-links { 
+        position: absolute; top: 75px; left: 0; width: 100%;
+        display: grid !important; grid-auto-flow: column !important; 
+        justify-content: center !important; gap: 30px !important; 
+    }
+    .btn { 
+        width: 145px; height: 40px; display: flex; align-items: center; justify-content: center; 
+        border: 2px solid #ffffff; color: #ffffff; border-radius: 4px; font-weight: 600;
+        text-transform: none !important; background: rgba(0,0,0,0.4);
+    }
+    .contentheading { font-size: 2.5rem; color: #ffffff; text-shadow: 0 0 5px rgba(255,255,255,0.7); }
+    .bg-video { position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -2; object-fit: cover; }
+    
+    .sidebar { height: 100%; width: 0; position: fixed; z-index: 10000; top: 0; right: 0; background: rgba(0,0,0,0.95); transition: 0.5s; padding-top: 60px; border-left: 1px solid #333; }
+    .sidebar-links a { padding: 15px 32px; text-decoration: none; font-size: 1.2rem; color: #ffffff; display: block; font-family: monospace; }
+    #sidebar-open { display: none; position: fixed; top: 20px; right: 20px; font-size: 30px; color: #ffffff; cursor: pointer; z-index: 9998; }
+
+    @media (max-width: 850px) {
+        .desktop-links { display: none !important; }
+        #sidebar-open { display: block; }
+        .hero-section { min-height: auto; padding-top: 100px; }
+        .about-me-container > div { flex-direction: column; }
+    }
+</style>
+
+<script>
+    function toggleSidebar() {
+        const sb = document.getElementById("sidebar");
+        sb.style.width = sb.style.width === "250px" ? "0" : "250px";
+    }
+    const textArray = {{ .Site.Params.phrases | jsonify | safeJS }};
+</script>
+<script src='{{ "js/script.js" | relURL }}'></script>
+{{ end }}
