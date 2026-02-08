@@ -29,7 +29,7 @@
                 {{ end }}
             </div>
             <div class='contenthead'>
-                <h2 class='contentheading'>Certified Network/Cybersecurity Professional</h2>
+                <h2 class='contentheading'>{{ .Site.Params.title }}</h2>
             </div>
             <div class='typewriter-wrapper'>
                 <div class='contenttypewritter animatedText'></div>
@@ -155,5 +155,9 @@
         const sb = document.getElementById("sidebar");
         sb.style.width = sb.style.width === "250px" ? "0" : "250px";
     }
+
+    // Restoring the typewriter script data
+    const textArray = {{ .Site.Params.phrases | jsonify | safeJS }};
 </script>
+<script src='{{ "js/script.js" | relURL }}'></script>
 {{ end }}
