@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <div class='hero-section' style="min-height: 45vh; display: flex; align-items: flex-end; justify-content: center; text-align: center; padding-bottom: 20px;">
+    <div class='hero-section' style="min-height: 50vh; display: flex; align-items: flex-end; justify-content: center; text-align: center; padding-bottom: 30px;">
         <div style="width: 100%;">
             <div class="desktop-links">
                 {{ range .Site.Params.links }}
@@ -29,9 +29,11 @@
                 {{ end }}
             </div>
             <div class='contenthead'>
-                <h3 class='contentheading' style="margin-bottom: 5px;">{{ .Site.Params.title }}</h3>
+                <h3 class='contentheading' style="margin-bottom: 10px;">{{ .Site.Params.title }}</h3>
             </div>
-            <div class='contenttypewritter animatedText' style="min-height: 1.5em; color: #ffffff;"></div>
+            <div style="min-height: 40px; display: flex; justify-content: center; align-items: center;">
+                <div class='contenttypewritter animatedText' style="color: #ffffff !important; font-size: 1.5rem; font-family: monospace; text-shadow: 0 0 10px rgba(255,255,255,0.8);"></div>
+            </div>
         </div>
     </div>
 
@@ -53,19 +55,19 @@
         <div style="background: rgba(0, 0, 0, 0.7); border: 1px solid #333; display: flex; flex-wrap: wrap; gap: 40px; padding: 40px; border-radius: 12px; align-items: center;">
             
             <div style="flex: 1.2; min-width: 300px;">
-                <div class="myText" style="display: block;">
+                <div class="myText slide-fade" style="display: block;">
                     <p style="line-height: 1.8; color: #ffffff; font-family: monospace; font-size: 0.95rem;">
-                        <strong>Slide 3 Text:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. (100 words here...)
+                        <strong>Slide 3:</strong> Detailed text for your third image goes here. Focus on a specific project or skill set.
                     </p>
                 </div>
-                <div class="myText" style="display: none;">
+                <div class="myText slide-fade" style="display: none;">
                     <p style="line-height: 1.8; color: #ffffff; font-family: monospace; font-size: 0.95rem;">
-                        <strong>Slide 1 Text:</strong> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
+                        <strong>Slide 1:</strong> This text corresponds with the first image in your sequence.
                     </p>
                 </div>
-                <div class="myText" style="display: none;">
+                <div class="myText slide-fade" style="display: none;">
                     <p style="line-height: 1.8; color: #ffffff; font-family: monospace; font-size: 0.95rem;">
-                        <strong>Slide 2 Text:</strong> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.
+                        <strong>Slide 2:</strong> Information about the second image. Keep it concise but informative.
                     </p>
                 </div>
             </div>
@@ -89,7 +91,6 @@
 <style>
     .desktop-links { position: absolute; top: 75px; left: 0; width: 100%; display: grid !important; grid-auto-flow: column !important; justify-content: center !important; gap: 30px !important; }
     
-    /* Box keeps white glow, text turns blue on hover */
     .btn { 
         width: 145px; height: 40px; display: flex; align-items: center; justify-content: center; 
         border: 2px solid #ffffff; border-radius: 4px; background: rgba(0,0,0,0.4); 
@@ -98,6 +99,9 @@
     .btn-text { color: #ffffff; font-weight: 600; transition: 0.3s; }
     .btn:hover .btn-text { color: #00d4ff !important; }
     .btn:hover { background: rgba(255,255,255,0.1); }
+
+    .slide-fade { animation: fadeEffect 0.8s; }
+    @keyframes fadeEffect { from {opacity: 0;} to {opacity: 1;} }
 
     .ss-btn {
         position: absolute; top: 50%; transform: translateY(-50%); 
@@ -108,14 +112,11 @@
 
     .contentheading { font-size: 2.5rem; color: #ffffff; text-shadow: 0 0 5px rgba(255,255,255,0.7); }
     .bg-video { position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -2; object-fit: cover; }
-    .sidebar { height: 100%; width: 0; position: fixed; z-index: 10000; top: 0; right: 0; background: rgba(0,0,0,0.95); transition: 0.5s; padding-top: 60px; border-left: 1px solid #333; }
-    .sidebar-links a { padding: 15px 32px; text-decoration: none; font-size: 1.2rem; color: #ffffff; display: block; font-family: monospace; }
-    #sidebar-open { display: none; position: fixed; top: 20px; right: 20px; font-size: 30px; color: #ffffff; cursor: pointer; z-index: 9998; }
-
+    
     @media (max-width: 850px) {
         .desktop-links { display: none !important; }
         #sidebar-open { display: block; }
-        .hero-section { min-height: auto; padding-top: 100px; }
+        .hero-section { min-height: auto; padding-top: 120px; }
         .slideshow-container > div { flex-direction: column-reverse; }
         .slideshow-container div[style*="height: 450px"] { height: 300px !important; }
     }
@@ -128,10 +129,8 @@
         let i;
         let slides = document.getElementsByClassName("mySlides");
         let texts = document.getElementsByClassName("myText");
-        
         if (n > slides.length) {slideIndex = 1}
         if (n < 1) {slideIndex = slides.length}
-        
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
             texts[i].style.display = "none";
@@ -144,6 +143,7 @@
         const sb = document.getElementById("sidebar");
         sb.style.width = sb.style.width === "250px" ? "0" : "250px";
     }
+    const textArray = {{ .Site.Params.phrases | jsonify | safeJS }};
 </script>
 <script src='{{ "js/script.js" | relURL }}'></script>
 {{ end }}
