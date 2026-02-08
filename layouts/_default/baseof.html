@@ -5,8 +5,7 @@
     <link rel="icon" type="image/png" href="{{ "/favicon.png" | relURL }}?v=1">
     <style>
         .master-logo {
-            /* Fixed on desktop, Absolute on mobile */
-            position: fixed !important;
+            position: absolute !important; /* Stays at the top, scrolls away */
             top: 20px !important;
             z-index: 9999 !important;
             width: 120px;
@@ -15,9 +14,11 @@
 
         @media (max-width: 850px) {
             .master-logo {
-                position: absolute !important; 
                 width: 20% !important;
                 top: 15px !important;
+            }
+            .main-content-wrapper {
+                margin-top: 20px !important; 
             }
         }
     </style>
