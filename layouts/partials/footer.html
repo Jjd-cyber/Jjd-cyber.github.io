@@ -1,29 +1,27 @@
 {{ if .Site.Params.footer }}
-<footer class="site-footer" style="text-align: center; padding: 10px 0; width: 100%; position: relative; z-index: 10; pointer-events: none;">
+<footer class="site-footer" style="text-align: center; padding: 10px 0; width: 100%; position: relative; z-index: 10;">
     
-    <img src="{{ "/imagelogo.png" | relURL }}" class="top-right-logo" alt="Logo">
+    <img src="{{ "/imagelogo.png" | relURL }}" class="top-left-logo" alt="Logo">
 
-    <p style="margin: 0; color: #ffffff; font-family: monospace; font-size: 1rem; pointer-events: auto;">
+    <p style="margin: 0; color: #ffffff; font-family: monospace; font-size: 1rem;">
         {{ .Site.Params.footer }}
     </p>
 
     <style>
-        .top-right-logo {
+        .top-left-logo {
             position: fixed;
             top: 20px;
-            right: 20px;
+            left: 20px; 
             width: 120px;
             height: auto;
             z-index: 1000;
-            /* Logo is already set to none so it doesn't block clicks */
-            pointer-events: none; 
         }
 
         @media (max-width: 600px) {
-            .top-right-logo {
+            .top-left-logo {
                 width: 70px;
                 top: 10px;
-                right: 10px;
+                left: 10px;
             }
         }
     </style>
