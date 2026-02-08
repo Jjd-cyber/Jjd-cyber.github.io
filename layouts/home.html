@@ -9,9 +9,8 @@
     {{ end }}
 
     <div id="sidebar" class="sidebar">
-        <div class="close-container">
-            <div id="sidebar-close" onclick="toggleSidebar()">×</div>
-        </div>
+        <div id="sidebar-close" onclick="toggleSidebar()" style="font-size: 45px; padding: 10px 25px; cursor: pointer; color: #ffffff; text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff;">×</div>
+        
         <div class="sidebar-links">
             {{ range .Site.Params.links }}
                 <a href="{{ .url }}" {{ if .newTab }} target="_blank" {{ end }}>{{ .name }}</a>
@@ -130,7 +129,7 @@
     .slideshow-box { flex: 1.8; min-width: 280px; max-width: 100%; position: relative; height: 450px; border-radius: 8px; border: 2px solid #00d4ff; box-shadow: 0 0 15px rgba(0, 212, 255, 0.4); overflow: hidden; }
     .slide-img { width: 100%; height: 100%; object-fit: cover; }
     .bg-video { position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -2; object-fit: cover; }
-    .sidebar { height: 100%; width: 0; position: fixed; z-index: 10000; top: 0; right: 0; background: rgba(0,0,0,0.95); transition: 0.5s; padding-top: 60px; border-left: 1px solid #333; overflow-x: hidden; }
+    .sidebar { height: 100%; width: 0; position: fixed; z-index: 10000; top: 0; right: 0; background: rgba(0,0,0,0.95); transition: 0.5s; padding-top: 20px; border-left: 1px solid #333; overflow-x: hidden; }
     .sidebar-links a { padding: 15px 32px; text-decoration: none; font-size: 1.2rem; color: #ffffff; display: block; font-family: monospace; }
 
     @media (max-width: 850px) {
@@ -143,26 +142,6 @@
         .slideshow-container > div { flex-direction: column-reverse; }
         .slideshow-box { height: 280px !important; width: 100% !important; }
 
-        .close-container { display: flex; justify-content: flex-end; padding: 10px 25px; }
-        #sidebar-close { 
-            font-size: 40px; 
-            cursor: pointer; 
-            color: #ffffff; 
-            border: 2px solid #00d4ff; 
-            border-radius: 4px; 
-            width: 50px; 
-            height: 50px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.9), inset 0 0 10px rgba(0, 212, 255, 0.5);
-            transition: 0.3s;
-        }
-        #sidebar-close:hover {
-            box-shadow: 0 0 30px rgba(0, 212, 255, 1);
-            color: #00d4ff;
-        }
-        
         .sidebar-links a {
             margin: 25px 20px;
             padding: 15px;
@@ -171,11 +150,9 @@
             text-align: center;
             box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
             background: rgba(10, 10, 10, 0.95);
-            font-weight: bold;
             transition: 0.3s;
         }
 
-        /* BRIGHTER glow on hover/tap */
         .sidebar-links a:hover {
             box-shadow: 0 0 25px rgba(0, 212, 255, 1);
             background: rgba(0, 212, 255, 0.2);
