@@ -3,16 +3,35 @@
 <head>
     {{- partial "head.html" . -}}
     <link rel="icon" type="image/png" href="{{ "/favicon.png" | relURL }}?v=1">
+    <style>
+        /* Desktop Default (Fixed 120px) */
+        .master-logo {
+            position: fixed;
+            top: 20px;
+            z-index: 9999;
+            width: 120px;
+            height: auto;
+            pointer-events: auto;
+        }
+
+        /* Mobile Only (Percentage scaling and tighter top lock) */
+        @media (max-width: 850px) {
+            .master-logo {
+                width: 15%;
+                min-width: 60px;
+                top: 10px;
+            }
+        }
+    </style>
 </head>
 <body style="margin: 0; background: black; color: white; font-family: monospace;">
     <div id="stars"></div>
-    <div id="stars2"></div>
+    <div id="stars2 :root"></div>
     <div id="stars3"></div>
 
-    <a href="{{ "/" | absURL }}" style="cursor: pointer; display: block;">
-        <img src="{{ "/imagelogo.png" | absURL }}" alt="Logo" 
-             style="position: fixed; top: 20px; z-index: 9999; width: 120px; height: auto; pointer-events: auto;
-             {{ if eq .Section "posts" }} right: 20px; {{ else }} left: 20px; {{ end }}">
+    <a href="{{ "/" | absURL }}" style="display: block;">
+        <img src="{{ "/imagelogo.png" | absURL }}" alt="Logo" class="master-logo"
+             style="{{ if eq .Section "posts" }} right: 20px; {{ else }} left: 20px; {{ end }}">
     </a>
 
     <div style="position: relative; z-index: 20;">
