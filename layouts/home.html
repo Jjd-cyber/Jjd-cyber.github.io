@@ -57,9 +57,18 @@
             <div style="flex: 1.2; min-width: 280px;">
                 <div class="myText slide-fade" style="display: block;">
                     <h2 style="color: #00d4ff; margin-top: 0; font-family: monospace; text-transform: none;">Hands On</h2>
-                    <p style="line-height: 1.8; color: #ffffff; font-family: monospace; font-size: 0.95rem;">
-                        Experienced in Kali Linux, EVE-NG, VMWare, Windows, Active Directory, Proxmox, and PfSense 
+                    <p style="line-height: 1.2; color: #ffffff; font-family: monospace; font-size: 0.95rem; margin-bottom: 5px;">
+                        Experienced in:
                     </p>
+                    <ul style="line-height: 1.6; color: #ffffff; font-family: monospace; font-size: 0.90rem; padding-left: 20px; list-style-type: square;">
+                        <li>Kali Linux</li>
+                        <li>EVE-NG</li>
+                        <li>VMWare</li>
+                        <li>Windows</li>
+                        <li>Active Directory</li>
+                        <li>Proxmox</li>
+                        <li>PfSense</li>
+                    </ul>
                 </div>
                 <div class="myText slide-fade" style="display: none;">
                     <h2 style="color: #00d4ff; margin-top: 0; font-family: monospace; text-transform: none;">Proven in Competitions</h2>
@@ -156,7 +165,6 @@
         sb.style.width = sb.style.width === "250px" ? "0" : "250px";
     }
 
-    // Restoring the typewriter script data
     const textArray = {{ .Site.Params.phrases | jsonify | safeJS }};
 </script>
 <script src='{{ "js/script.js" | relURL }}'></script>
