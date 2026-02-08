@@ -9,7 +9,9 @@
     {{ end }}
 
     <div id="sidebar" class="sidebar">
-        <div id="sidebar-close" onclick="toggleSidebar()" style="font-size: 45px; padding: 10px 25px; cursor: pointer;">×</div>
+        <div class="close-container">
+            <div id="sidebar-close" onclick="toggleSidebar()">×</div>
+        </div>
         <div class="sidebar-links">
             {{ range .Site.Params.links }}
                 <a href="{{ .url }}" {{ if .newTab }} target="_blank" {{ end }}>{{ .name }}</a>
@@ -141,15 +143,43 @@
         .slideshow-container > div { flex-direction: column-reverse; }
         .slideshow-box { height: 280px !important; width: 100% !important; }
 
-        /* Glowing blue textboxes for mobile sidebar links */
+        .close-container { display: flex; justify-content: flex-end; padding: 10px 25px; }
+        #sidebar-close { 
+            font-size: 40px; 
+            cursor: pointer; 
+            color: #ffffff; 
+            border: 2px solid #00d4ff; 
+            border-radius: 4px; 
+            width: 50px; 
+            height: 50px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.9), inset 0 0 10px rgba(0, 212, 255, 0.5);
+            transition: 0.3s;
+        }
+        #sidebar-close:hover {
+            box-shadow: 0 0 30px rgba(0, 212, 255, 1);
+            color: #00d4ff;
+        }
+        
         .sidebar-links a {
-            margin: 15px 20px;
-            padding: 12px;
+            margin: 25px 20px;
+            padding: 15px;
             border: 2px solid #00d4ff;
             border-radius: 4px;
             text-align: center;
-            box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
-            background: rgba(0, 212, 255, 0.1);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+            background: rgba(10, 10, 10, 0.95);
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        /* BRIGHTER glow on hover/tap */
+        .sidebar-links a:hover {
+            box-shadow: 0 0 25px rgba(0, 212, 255, 1);
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
         }
     }
 </style>
